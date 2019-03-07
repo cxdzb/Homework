@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HelloWorld2
 {
-    class HelloWorld
+    public class HelloWorld
     {
         static public void Print(string arg = " No args!") => Console.WriteLine("Hello world!" + arg);
         static void Main(string[] args)
