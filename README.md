@@ -1,3 +1,9 @@
+## 一、 Homework1
+****
+#### 技术思路：
+
+#### 运行结果：
+
 ## 二、 Homework2
 ****
 ### 1. HelloWorld1
@@ -40,3 +46,17 @@
 ![](https://github.com/cxdzb/homework/blob/master/result/helloworld-5-2.png?raw=true)
 ![](https://github.com/cxdzb/homework/blob/master/result/helloworld-5-3.png?raw=true)
 ****
+## 三、 Homework3
+****
+#### 技术思路：
+整个程序用于计算小费tip
+
+添加Grid，在Grid中添加三个RowDefinitions将Grid分为三个部分。
+第一二部分各添加一个TextBlock，定义Text内容为标题和输入提示。
+第三部分添加一个StackPanel，使结构更规则，其中分为四个小部分。首先是TextBlock和TextBox，TextBox用于输入；然后是一个TextBlock和三个RadioButton，RadioButton用于选择利率；后两部份各添加了两个TextBlock，一个用于输出tip，一个用于输出total。
+
+定义四个事件，前三个amountTextBox_LostFocus、billAmountTextBox_TextChanged、amountTextBox_GotFocus分别用于光标未点的情况、文本改变的情况和光标点击的情况，最后一个RadioButton_Click用于利率的选择。billAmountTextBox_TextChanged和RadioButton_Click中都调用了performCalculation这个计算利率并输出的函数。
+Tip类，定义了相关的属性和计算方法CalculateTip，在初始化时创建，被performCalculation调用。
+#### 运行结果：
+![](https://github.com/cxdzb/homework/blob/master/result/h3-1.png?raw=true)
+![](https://github.com/cxdzb/homework/blob/master/result/h3-2.png?raw=true)
