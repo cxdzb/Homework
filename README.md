@@ -1,9 +1,10 @@
 ## 一、 Homework1
 ****
 #### 技术思路：
-
+可通过System.Console.BackgroundColor来改变命令行的颜色。
+也可通过System.Console.ResetColor()来恢复设置。
 #### 运行结果：
-
+![](https://github.com/cxdzb/homework/blob/master/result/h1-1.png?raw=true)
 ## 二、 Homework2
 ****
 ### 1. HelloWorld1
