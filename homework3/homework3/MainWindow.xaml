@@ -6,93 +6,96 @@
         xmlns:local="clr-namespace:homework3"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="350">
-    <Grid Margin="0,0,3.4,-0.2">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="70" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <Viewbox Stretch="Fill">
+        <Canvas Height="520" Width="330">
+            <Grid Margin="0,0,3.4,-0.2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="70" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-        <TextBlock Margin="20,0,20,0"
-                   Grid.Row="0" FontSize="20">
-            Tip Calculator
-        </TextBlock>
+            <TextBlock Margin="20,0,0,70"
+                            Grid.Row="0" FontSize="20" HorizontalAlignment="Left" Grid.RowSpan="2" Width="301">
+                    Tip Calculator
+                </TextBlock>
 
-        <TextBlock Margin="20,0.4,19.6,0"
-                   Grid.Row="1"
-                   FontSize="28">
-            Enter the Bill Amount
-        </TextBlock>
+                <TextBlock Margin="20,0.4,19.6,0"
+                            Grid.Row="1"
+                            FontSize="28">
+                    Enter the Bill Amount
+                </TextBlock>
 
-        <StackPanel Name="myStackPanel" Grid.Row="2" Margin="20,0,19.6,24.8">
+                <StackPanel Name="myStackPanel" Grid.Row="2" Margin="20,0,19.6,24.8">
 
-            <TextBlock HorizontalAlignment="Left"
-                       TextWrapping="Wrap"
-                       Text="Bill Amount"
-                       FontSize="24"/>
+                    <TextBlock HorizontalAlignment="Left"
+                                TextWrapping="Wrap"
+                                Text="Bill Amount"
+                                FontSize="24"/>
 
-            <TextBox Name="billAmountTextBox"
-                     Text="￥0.00"
-                     TextAlignment="Right"
-                     HorizontalAlignment="Left"
-                     TextWrapping="Wrap"
-                     VerticalAlignment="Top"
-                     InputScope="Number"
-                     Width="100"
-                     FontSize="24"
-                     LostFocus="amountTextBox_LostFocus"
-                     TextChanged="billAmountTextBox_TextChanged"
-                     GotFocus="amountTextBox_GotFocus"/>
+                    <TextBox Name="billAmountTextBox"
+                                Text="￥0.00"
+                                TextAlignment="Right"
+                                HorizontalAlignment="Left"
+                                TextWrapping="Wrap"
+                                VerticalAlignment="Top"
+                                InputScope="Number"
+                                Width="100"
+                                FontSize="24"
+                                TextChanged="billAmountTextBox_TextChanged"
+                                GotFocus="amountTextBox_GotFocus"/>
 
-            <TextBlock HorizontalAlignment="Left"
-                       TextWrapping="Wrap"
-                       Text="Percent To Tip:"
-                       VerticalAlignment="Top"
-                       FontSize="24"
-                       Margin="0,20,0,0"/>
+                    <TextBlock HorizontalAlignment="Left"
+                                TextWrapping="Wrap"
+                                Text="Percent To Tip:"
+                                VerticalAlignment="Top"
+                                FontSize="24"
+                                Margin="0,20,0,0"/>
 
-            <RadioButton Content="10% - Horrible Service"
-                         Tag="0.1"
-                         GroupName="percentRadio"
-                         Click="RadioButton_Click"/>
+                    <RadioButton Content="10% - Horrible Service"
+                                    Tag="0.1"
+                                    GroupName="percentRadio"
+                                    Click="RadioButton_Click"/>
 
-            <RadioButton Content="18% - Acceptable Service"
-                         Tag="0.18"
-                         GroupName="percentRadio"
-                         IsChecked="True"
-                         Click="RadioButton_Click"/>
+                    <RadioButton Content="18% - Acceptable Service"
+                                    Tag="0.18"
+                                    GroupName="percentRadio"
+                                    IsChecked="True"
+                                    Click="RadioButton_Click"/>
 
-            <RadioButton Content="25% - Great Service"
-                         Tag="0.25"
-                         GroupName="percentRadio"
-                         Click="RadioButton_Click"/>
+                    <RadioButton Content="25% - Great Service"
+                                    Tag="0.25"
+                                    GroupName="percentRadio"
+                                    Click="RadioButton_Click"/>
 
-            <TextBlock HorizontalAlignment="Left"
-                       TextWrapping="Wrap"
-                       Text="Amount to Tip:"
-                       FontSize="24"
-                       Margin="0,20,0,0"/>
+                    <TextBlock HorizontalAlignment="Left"
+                                TextWrapping="Wrap"
+                                Text="Amount to Tip:"
+                                FontSize="24"
+                                Margin="0,20,0,0"/>
 
-            <TextBlock Name="amountToTipTextBlock"
-                       HorizontalAlignment="Left"
-                       TextWrapping="Wrap"
-                       VerticalAlignment="Top"
-                       Text="￥0.00"
-                       FontSize="36"/>
+                    <TextBlock Name="amountToTipTextBlock"
+                                HorizontalAlignment="Left"
+                                TextWrapping="Wrap"
+                                VerticalAlignment="Top"
+                                Text="￥0.00"
+                                FontSize="36"/>
 
-            <TextBlock HorizontalAlignment="Left"
-                       TextWrapping="Wrap"
-                       Text="Total Bill:"
-                       FontSize="24"
-                       Margin="0,20,0,0"/>
+                    <TextBlock HorizontalAlignment="Left"
+                                TextWrapping="Wrap"
+                                Text="Total Bill:"
+                                FontSize="24"
+                                Margin="0,20,0,0"/>
 
-            <TextBlock Name="totalTextBlock"
-                       HorizontalAlignment="Left"
-                       TextWrapping="Wrap"
-                       VerticalAlignment="Top"
-                       Text="￥0.00"
-                       FontSize="36"/>
+                    <TextBlock Name="totalTextBlock"
+                                HorizontalAlignment="Left"
+                                TextWrapping="Wrap"
+                                VerticalAlignment="Top"
+                                Text="￥0.00"
+                                FontSize="36"/>
 
-        </StackPanel>
-    </Grid>
+                </StackPanel>
+            </Grid>
+        </Canvas>
+    </Viewbox>
 </Window>
