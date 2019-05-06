@@ -71,35 +71,35 @@ Tip类，定义了相关的属性和计算方法CalculateTip，在初始化时�
 ****
 #### 技术思路：
 创建项目后：
-1）、编辑api路由，routeTemplate: "api/{controller}/{action}/{id}"。
-2）、建立模型，定义一个Person类，包含ID/First/Last属性。
-3）、创建数据容器，创建一个List<Person>保存数据。
-4）、编辑方法，Get（得到数据），Post（上传数据），Put（更改数据），Delete（删除数据）。（这只是本人的用法，每种请求方式都用多种用法，不唯一）
-5）、编写前端，html简单，加一点css修饰，主要难在ajax提交表单的构造上，上传json格式，必须contentType: "application/json"和data: JSON.stringify(data)配合使用。
+###### 1）、编辑api路由，routeTemplate: "api/{controller}/{action}/{id}"。
+###### 2）、建立模型，定义一个Person类，包含ID/First/Last属性。
+###### 3）、创建数据容器，创建一个List<Person>保存数据。
+###### 4）、编辑方法，Get（得到数据），Post（上传数据），Put（更改数据），Delete（删除数据）。（这只是本人的用法，每种请求方式都用多种用法，不唯一）
+###### 5）、编写前端，html简单，加一点css修饰，主要难在ajax提交表单的构造上，上传json格式，必须contentType: "application/json"和data: JSON.stringify(data)配合使用。
 
-具体实现请按下列路线查看：
-App_start/WebApiConfig.cs	路由配置
-Models\Person.cs	模型文件
-Controllers\PersonsController.cs	控制器（请求方法）
-Views\Home\Index.cshtml	前端界面
+###### 具体实现请按下列路线查看：
+###### App_start/WebApiConfig.cs	路由配置
+###### Models\Person.cs	模型文件
+###### Controllers\PersonsController.cs	控制器（请求方法）
+###### Views\Home\Index.cshtml	前端界面
 #### 运行结果：
-首页
+###### 首页
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-2.png?raw=true)
-查询所有用户
+###### 查询所有用户
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-3.png?raw=true)
-查询某位用户
+###### 查询某位用户
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-4.png?raw=true)
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-5.png?raw=true)
-修改某位用户
+###### 修改某位用户
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-6.png?raw=true)
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-7.png?raw=true)
-添加一位用户
+###### 添加一位用户
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-8.png?raw=true)
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-9.png?raw=true)
-查询所有用户
+###### 查询所有用户
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-10.png?raw=true)
-删除某位用户
+###### 删除某位用户
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-11.png?raw=true)
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-12.png?raw=true)
-查询所有用户
+###### 查询所有用户
 ![](https://github.com/cxdzb/homework/blob/master/result/h4-13.png?raw=true)
