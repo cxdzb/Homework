@@ -1,0 +1,142 @@
+﻿<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="制作者：刘书裴 耗时：2天 留言：还是Django好用"/>
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript"> /*使用ajax发送请求*/
+        //下列4个大同小异，所以只解释一个
+        $(function () { 
+            $('#Select').click(function () {    /*点击事件*/
+                var id = $('#id').val();    /*得到id*/
+                $.ajax({    /*构造http请求*/
+                    url: "../api/Persons/Get/" + id,
+                    type: "get",
+                    success: function (data) {  /*成功则弹出提示，data是返回值*/
+                        $('#id').val('');   /*输入框留空*/
+                        alert("ID:" + data.ID + "\nFirst:" + data.First+"\nLast:"+data.Last);
+                    },
+                    error: function (error) {
+                        alert(error);
+                    }
+                });
+            });
+            $('#Create').click(function () {
+                var person = {
+                    ID: parseInt($('#ID2').val()),
+                    First: $('#First2').val(),
+                    Last: $('#Last2').val(),
+                };
+                $.ajax({
+                    url: "../api/Persons/Post",
+                    type: "post",
+                    dataType:"json",
+                    contentType: "application/json",
+                    data: JSON.stringify(person),
+                    success: function (data) {
+                        $('#ID2').val('');
+                        $('#First2').val('');
+                        $('#Last2').val('');
+                        alert(data);
+                    },
+                    error: function (error) {
+                        alert(error);
+                    }
+                });
+            });
+            $('#Update').click(function () {
+                var person = {
+                    ID: parseInt($('#ID1').val()),
+                    First: $('#First1').val(),
+                    Last: $('#Last1').val(),
+                };
+                $.ajax({
+                    url: "../api/Persons/Put/" + person['ID'].toString(),
+                    type: "put",
+                    dataType: "json",
+                    contentType: "application/json",
+                    data: JSON.stringify(person),
+                    success: function (data) {
+                        $('#ID1').val('');
+                        $('#First1').val('');
+                        $('#Last1').val('');
+                        alert(data);
+                    },
+                    error: function (error) {
+                        alert(error);
+                    }
+                });
+            });
+            $('#Delete').click(function () {
+                var id = parseInt($('#only_ID').val());
+                console.log(id);
+                $.ajax({
+                    url: "../api/Persons/Delete/"+id,
+                    type: "delete",
+                    success: function (data) {
+                        $('#only_ID').val('');
+                        alert(data);
+                    },
+                    error: function (error) {
+                        alert(error);
+                    }
+                });
+            });
+        });
+    </script>
+    <style type="text/css"> /*写点css，不然太丑了*/
+        body { /*使所有内容居中*/
+            background-image: url("../../background.jpg");
+            background-size: 100% 100%;
+            font-family:Arial;
+            text-align: center;
+        }
+        .button {   /*设置字体、大小、盒子、颜色等等*/
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 12px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+        .button:active {    /*阴影效果*/
+            background-color: #3e8e41;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body>  @* 主体分为四块，包含一堆输入框，不详细解释（太简单） *@
+    <div>
+        <h1>Select</h1>
+        <input type="text" id="id" placeholder="ID" />
+        <input type="button" id="Select" value="Select" class="button" class="button" />
+        <a href="../api/Persons/Get"><input type="button" value="SelectAll" class="button" /></a>   @* 使用超链接更加方便 *@
+    </div>
+    <hr />
+    <div>
+        <h1>Update</h1>
+        <input type="text" id="ID1" placeholder="ID" />
+        <input type="text" id="First1" placeholder="First" />
+        <input type="text" id="Last1" placeholder="Last" />
+        <input type="button" id="Update" value="Update" class="button" />
+    </div>
+    <hr />
+    <div>
+        <h1>Insert</h1>
+        <input type="text" id="ID2" placeholder="ID" />
+        <input type="text" id="First2" placeholder="First" />
+        <input type="text" id="Last2" placeholder="Last" />
+        <input type="button" id="Create" value="Create" class="button" />
+    </div>
+    <hr />
+    <div>
+        <h1>Delete</h1>
+        <input type="text" id="only_ID" placeholder="ID" />
+        <input type="button" id="Delete" value="Delete" class="button" />
+    </div>
+</body>
